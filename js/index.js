@@ -62,6 +62,24 @@ let navAll = document.querySelectorAll('nav a');
   navAll[4].textContent = siteContent['nav'][`nav-item-5`];
   navAll[5].textContent = siteContent['nav'][`nav-item-6`];
 
+  navAll.forEach(item => {
+    item.style.color = 'green';
+  });
+
+
+  const newVigationFront =  document.createElement('a');
+  const newVigationEnd =  document.createElement('a');
+
+    newVigationFront.textContent = "Similar Apps";
+    newVigationEnd.textContent = "Partners";
+
+  let navBar = document.querySelector('nav');
+    navBar.prepend(newVigationFront);
+    navBar.appendChild(newVigationEnd);
+    newVigationFront.style.color ='green';
+    newVigationEnd.style.color ='green';
+   
+
 let awesomeMessage = document.querySelector('.cta .cta-text h1');
   awesomeMessage.textContent = siteContent['cta']['h1'];
 
