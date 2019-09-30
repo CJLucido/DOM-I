@@ -37,6 +37,9 @@ const siteContent = {
   },
 };
 
+let bodyPaint = document.querySelector('html'); //color change event will work for node list but not for HTMLCollection
+
+
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
   logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -86,6 +89,17 @@ let awesomeMessage = document.querySelector('.cta .cta-text h1');
 let awesomeBtn = document.querySelector('.cta .cta-text button');
   awesomeBtn.textContent = siteContent['cta']['button'];
 
+      awesomeBtn.addEventListener("click", (event => {
+              event.target.style.background = 'black';
+              navBar.style.flexDirection = "column";
+              bodyPaint.style.background = "grey";
+      }));
+
+      awesomeBtn.addEventListener("mouseleave", (event => {
+        event.target.style.background = 'white';
+        navBar.style.flexDirection = "column-reverse";
+}));
+
 let topSubHeadings = document.querySelectorAll('.main-content .top-content .text-content h4');
   topSubHeadings[0].textContent = siteContent['main-content']['features-h4']
   topSubHeadings[1].textContent = siteContent['main-content']['about-h4'];
@@ -114,3 +128,5 @@ let contactPrgs = document.querySelectorAll('.contact p');
 
 let domFoot = document.querySelector('footer p');
   domFoot.textContent = siteContent['footer']['copyright'];
+
+
